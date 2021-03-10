@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 
 MAINTAINER shiunchen
 RUN apt update
-RUN apt install -y curl openssl git tar bash sqlite nodejs openjdk-11-jdk \
-    && adduser --disabled-password --home /home/container container
+RUN apt install -y git nodejs openjdk-11-jdk 
+RUN adduser --disabled-password --home /home/container container
 
 USER container
 ENV  USER=container HOME=/home/container
