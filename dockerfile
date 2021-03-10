@@ -15,6 +15,6 @@ ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
 RUN git clone https://github.com/jing-shiun/panel-docker-file.git
-COPY ./panel-docker-file/entrypoint.sh /entrypoint.sh
+RUN cp -r./panel-docker-file/entrypoint.sh /entrypoint.sh
 
 CMD ["/bin/bash", "/entrypoint.sh"]
