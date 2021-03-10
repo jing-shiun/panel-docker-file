@@ -1,8 +1,9 @@
+  
 FROM ubuntu:20.04
 
 MAINTAINER shiunchen
 RUN apt update
-RUN apt install -y git nodejs openjdk-11-jdk 
+RUN DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends git nodejs openjdk-11-jdk 
 RUN TZ=Asia/Taipei \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone \
@@ -14,6 +15,6 @@ ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
 RUN git clone https://github.com/jing-shiun/panel-docker-file.git
-COPY /panel-docker-file/entrypoint.sh /entrypoint.sh
+COPY ./panel-docker-file/entrypoint.sh /entrypoint.sh
 
 CMD ["/bin/bash", "/entrypoint.sh"]
