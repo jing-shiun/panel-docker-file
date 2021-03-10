@@ -3,6 +3,10 @@ FROM ubuntu:20.04
 MAINTAINER shiunchen
 RUN apt update
 RUN apt install -y git nodejs openjdk-11-jdk 
+RUN TZ=Asia/Taipei \
+    && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+    && echo $TZ > /etc/timezone \
+    && dpkg-reconfigure -f noninteractive tzdata 
 RUN adduser --disabled-password --home /home/container container
 
 USER container
