@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 MAINTAINER shiunchen
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends curl nodejs openjdk-11-jdk 
+RUN DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends curl nodejs openjdk-11-jdk npm
 RUN TZ=Asia/Taipei \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone \
