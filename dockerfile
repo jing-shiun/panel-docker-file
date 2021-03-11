@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 MAINTAINER shiunchen
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends git nodejs openjdk-11-jdk 
+RUN DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends curl nodejs openjdk-11-jdk 
 RUN TZ=Asia/Taipei \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone \
@@ -13,7 +13,6 @@ USER container
 ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
-RUN git clone https://github.com/jing-shiun/panel-docker-file.git
-RUN cp -r /panel-docker-file/entrypoint.sh /entrypoint.sh
+RUN curl https://raw.githubusercontent.com/jing-shiun/panel-docker-file/main/entrypoint.sh
 
 CMD ["/bin/bash", "/entrypoint.sh"]
