@@ -13,6 +13,6 @@ USER container
 ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
-RUN curl https://raw.githubusercontent.com/jing-shiun/panel-docker-file/main/entrypoint.sh
+RUN curl -LJO https://raw.githubusercontent.com/jing-shiun/panel-docker-file/main/entrypoint.sh
 
 CMD ["/bin/bash", "/entrypoint.sh"]
