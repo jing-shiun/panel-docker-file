@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 MAINTAINER shiunchen
 RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends curl openjdk-11-jdk npm gcc g++ make tzdata ca-certificates openssl git tar sqlite fontconfig>
+RUN DEBIAN_FRONTEND=noninteractive apt install -y --no-install-recommends curl openjdk-11-jdk npm gcc g++ make tzdata ca-certificates openssl git tar sqlite fontconfig
 RUN npm i -g n
 RUN n 12
 RUN apt remove -y nodejs npm
