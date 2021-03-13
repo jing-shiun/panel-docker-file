@@ -6,4 +6,4 @@ cd /home/container
 echo ":/home/container$ npm start"
 
 # Run the Server
-npm start
+node .
