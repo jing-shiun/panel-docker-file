@@ -16,5 +16,6 @@ WORKDIR /home/container
 RUN cd /home/container
 RUN curl -LJO https://raw.githubusercontent.com/jing-shiun/panel-docker-file/main/entrypoint.sh
 RUN dir
+COPY ./entryponit.sh /entrypoint.sh
 
 CMD ["/bin/bash", "/entrypoint.sh"]
