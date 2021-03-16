@@ -14,4 +14,4 @@ ENV  USER=container HOME=/home/container
 
 WORKDIR /home/container
 RUN cd /home/container
-CMD ["/nodejs/bin/npm", "start"]
+CMD ["/bin/nodejs", "."]
